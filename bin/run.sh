@@ -1,4 +1,4 @@
 #!/bin/sh
 
-./vhosts-gen.rb &
+./bin/vhost-gen.rb &
 nginx -g "daemon off;"
