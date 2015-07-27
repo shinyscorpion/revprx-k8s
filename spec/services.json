@@ -1,0 +1,117 @@
+
+{
+  "kind": "ServiceList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/namespaces/default/services",
+    "resourceVersion": "10235"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "kube-dns",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/services/kube-dns",
+        "uid": "068aa605-3127-11e5-ba15-080027d1283d",
+        "resourceVersion": "44",
+        "creationTimestamp": "2015-07-23T10:38:58Z",
+        "labels": {
+          "k8s-app": "kube-dns",
+          "kubernetes.io/cluster-service": "true",
+          "name": "kube-dns"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "dns",
+            "protocol": "UDP",
+            "port": 53,
+            "targetPort": 53,
+            "nodePort": 0
+          },
+          {
+            "name": "dns-tcp",
+            "protocol": "TCP",
+            "port": 53,
+            "targetPort": 53,
+            "nodePort": 0
+          }
+        ],
+        "selector": {
+          "k8s-app": "kube-dns"
+        },
+        "clusterIP": "10.100.0.10",
+        "type": "ClusterIP",
+        "sessionAffinity": "None"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    },
+    {
+      "metadata": {
+        "name": "kubernetes",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/services/kubernetes",
+        "uid": "018bf7fc-3127-11e5-ba15-080027d1283d",
+        "resourceVersion": "25",
+        "creationTimestamp": "2015-07-23T10:38:50Z",
+        "labels": {
+          "component": "apiserver",
+          "provider": "kubernetes"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "protocol": "TCP",
+            "port": 443,
+            "targetPort": 443,
+            "nodePort": 0
+          }
+        ],
+        "clusterIP": "10.100.0.1",
+        "type": "ClusterIP",
+        "sessionAffinity": "None"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    },
+    {
+      "metadata": {
+        "name": "microbot-v1",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/services/microbot-v1",
+        "uid": "118a827b-312d-11e5-ba15-080027d1283d",
+        "resourceVersion": "2514",
+        "creationTimestamp": "2015-07-23T11:22:14Z",
+        "labels": {
+          "k8s-app": "microbot",
+          "version": "v1"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "protocol": "TCP",
+            "port": 80,
+            "targetPort": 80,
+            "nodePort": 31656
+          }
+        ],
+        "selector": {
+          "k8s-app": "microbot",
+          "version": "v1"
+        },
+        "clusterIP": "10.100.253.43",
+        "type": "LoadBalancer",
+        "sessionAffinity": "None"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    }
+  ]
+}
