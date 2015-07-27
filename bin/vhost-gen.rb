@@ -52,6 +52,6 @@ loop do
   )
   vc.write_vhosts_from_services_json(services)
   # Reload nginx with HUP signal
-  puts %x(kill -HUP $(pgrep -f "nginx" -u root))
+  puts %x(kill -HUP $(pgrep -f "nginx"))
   sleep ENV['INTERVAL'].to_f
 end
